@@ -1,0 +1,1 @@
+export const TacoIndex = () => <h1>Taco Index</h1>;
