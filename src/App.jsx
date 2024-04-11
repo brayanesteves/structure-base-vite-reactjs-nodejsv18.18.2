@@ -1,11 +1,10 @@
 import                            './App.css';
 import { Route, Routes, }    from 'react-router-dom';
 import { Header }            from './components/Header';
-
-// <COMPONENT> //
-const Home       = () => <h1>Home</h1>;
-const SearchPage = () => <h1>Search Page</h1>;
-// <.COMPONENT> //
+import { SearchPage }        from './components/SearchPage';
+import { Tacos }             from './components/Tacos';
+import { Home }              from './components/Home';
+import { TacoDetails }       from './components/TacoDetails';
 
 function App() {
   return (
@@ -13,7 +12,10 @@ function App() {
       <Header />
       <Routes>        
         <Route path='/' element={<Home />} />
-        <Route path='/search-page' element={<SearchPage />} />      
+        <Route path='/search-page' element={<SearchPage />} />
+        <Route path='/tacos/:search' element={<Tacos />}>
+          <Route path='details' element={<TacoDetails />} />
+        </Route>
       </Routes>
     </div>
   )
