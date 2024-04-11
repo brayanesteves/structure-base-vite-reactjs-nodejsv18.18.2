@@ -1,10 +1,11 @@
-import                            './App.css';
-import { Route, Routes, }    from 'react-router-dom';
-import { Header }            from './components/Header';
-import { SearchPage }        from './components/SearchPage';
-import { Tacos }             from './components/Tacos';
-import { Home }              from './components/Home';
-import { TacoDetails }       from './components/TacoDetails';
+import                         './App.css';
+import { Route, Routes, } from 'react-router-dom';
+import { Header }         from './components/Header';
+import { SearchPage }     from './components/SearchPage';
+import { Tacos }          from './components/Tacos';
+import { Home }           from './components/Home';
+import { TacoDetails }    from './components/TacoDetails';
+import { NotFound }       from './components/http/404';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/tacos/:search' element={<Tacos />}>
           <Route path='details' element={<TacoDetails />} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )
