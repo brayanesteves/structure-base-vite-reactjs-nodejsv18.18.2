@@ -5,14 +5,14 @@ import { TacoDetails } from '../components/TacoDetails';
 import { NotFound }    from '../components/http/404';
 
 export const routes = [
-    { path: '/', element: <Home /> },
-    { path: '/search-page', element: <SearchPage /> },
+    { path: '/', element: (<Home />) },
+    { path: '/search-page', element: (<SearchPage />) },
     {
       path: '/tacos/:search',
-      element: <Tacos />,
+      element: (<Tacos />),
       children: [
-        { path: 'details', element: <TacoDetails /> },
+        { path: 'details', element: (<TacoDetails />) },
       ],
     },
-    { path: '*', element: <NotFound /> },
+    { path: '*', element: (<NotFound />) },
 ];
